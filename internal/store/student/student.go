@@ -7,8 +7,8 @@ import (
 )
 
 var (
-	StudentNotFoundErr  = errors.New("student not found")
-	StudentDuplicateErr = errors.New("student already exists")
+	ErrStudentNotFound  = errors.New("student not found")
+	ErrStudentDuplicate = errors.New("student already exists")
 )
 
 type Student interface {

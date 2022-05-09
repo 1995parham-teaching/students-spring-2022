@@ -11,16 +11,18 @@ import (
 	"githuh.com/cng-by-example/students/internal/http/request"
 	"githuh.com/cng-by-example/students/internal/model"
 	"githuh.com/cng-by-example/students/internal/store/student"
+	"go.uber.org/zap"
 )
 
 type Student struct {
-	Store student.Student
+	Store  student.Student
+	Logger *zap.Logger
 }
 
 func (s *Student) List(c *fiber.Ctx) error {
 	l, err := s.Store.GetAll()
 	if err != nil {
-		log.Println(err)
+		s.Logger.Error("store.getall failed", zap.Error(err))
 
 		return fiber.ErrInternalServerError
 	}
@@ -31,23 +33,25 @@ func (s *Student) List(c *fiber.Ctx) error {
 func (s *Student) Get(c *fiber.Ctx) error {
 	idStr := c.Params("id", "-")
 	if idStr == "-" {
+		s.Logger.Info("cannot get id", zap.String("url", c.OriginalURL()))
+
 		return fiber.ErrBadRequest
 	}
 
 	id, err := strconv.ParseInt(idStr, 10, 64)
 	if err != nil {
-		log.Println(err)
+		s.Logger.Info("cannot parse id", zap.String("id", idStr))
 
 		return fiber.ErrBadRequest
 	}
 
 	std, err := s.Store.Get(id)
 	if err != nil {
-		if errors.Is(err, student.StudentNotFoundErr) {
+		if errors.Is(err, student.ErrStudentNotFound) {
 			return fiber.ErrNotFound
 		}
 
-		log.Println(err)
+		s.Logger.Error("store.get", zap.Error(err), zap.Int64("id", id))
 
 		return fiber.ErrInternalServerError
 	}
