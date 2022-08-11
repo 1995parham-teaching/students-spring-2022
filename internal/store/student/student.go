@@ -3,7 +3,7 @@ package student
 import (
 	"errors"
 
-	"githuh.com/cng-by-example/students/internal/model"
+	"githuh.com/1995parham-teaching/students/internal/model"
 )
 
 var (

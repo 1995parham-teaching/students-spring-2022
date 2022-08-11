@@ -8,9 +8,9 @@ import (
 	"strconv"
 
 	"github.com/gofiber/fiber/v2"
-	"githuh.com/cng-by-example/students/internal/http/request"
-	"githuh.com/cng-by-example/students/internal/model"
-	"githuh.com/cng-by-example/students/internal/store/student"
+	"githuh.com/1995parham-teaching/students/internal/http/request"
+	"githuh.com/1995parham-teaching/students/internal/model"
+	"githuh.com/1995parham-teaching/students/internal/store/student"
 	"go.uber.org/zap"
 )
 

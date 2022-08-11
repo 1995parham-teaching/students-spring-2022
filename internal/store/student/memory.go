@@ -1,6 +1,6 @@
 package student
 
-import "githuh.com/cng-by-example/students/internal/model"
+import "githuh.com/1995parham-teaching/students/internal/model"
 
 type InMemory struct {
 	students map[int64]model.Student

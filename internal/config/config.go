@@ -9,7 +9,7 @@ import (
 	"github.com/knadh/koanf/providers/env"
 	"github.com/knadh/koanf/providers/file"
 	"github.com/knadh/koanf/providers/structs"
-	"githuh.com/cng-by-example/students/internal/db"
+	"githuh.com/1995parham-teaching/students/internal/db"
 )
 
 const (

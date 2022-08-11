@@ -4,9 +4,9 @@ import (
 	"log"
 
 	"github.com/gofiber/fiber/v2"
-	"githuh.com/cng-by-example/students/internal/config"
-	"githuh.com/cng-by-example/students/internal/http/handler"
-	"githuh.com/cng-by-example/students/internal/store/student"
+	"githuh.com/1995parham-teaching/students/internal/config"
+	"githuh.com/1995parham-teaching/students/internal/http/handler"
+	"githuh.com/1995parham-teaching/students/internal/store/student"
 	"go.uber.org/zap"
 )
 

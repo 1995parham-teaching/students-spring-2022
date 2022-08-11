@@ -4,7 +4,7 @@ import (
 	"testing"
 	"time"
 
-	"githuh.com/cng-by-example/students/internal/db"
+	"githuh.com/1995parham-teaching/students/internal/db"
 )
 
 func TestConnect(t *testing.T) {

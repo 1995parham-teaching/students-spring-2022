@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 
-	"githuh.com/cng-by-example/students/internal/model"
+	"githuh.com/1995parham-teaching/students/internal/model"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 )
